@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap');
+    .text { font-family: 'Space Grotesk', sans-serif; font-size: 32px; dominant-baseline: middle; }
+    .bold { font-weight: 700; }
+    .regular { font-weight: 400; }
+  </style>
+  <text x="0" y="30" class="text bold" fill="hsl(142, 70%, 50%)">FOUNDRA</text>
+  <text x="165" y="30" class="text regular" fill="#ffffff">Robotics</text>
+</svg>

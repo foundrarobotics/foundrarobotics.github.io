@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-actuator.jpg";
+import heroImage from "@/assets/hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="section-chassis min-h-screen flex flex-col justify-end py-8 md:py-12 relative overflow-hidden">
+    <section className="section-chassis min-h-screen flex flex-col relative overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -14,75 +14,92 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-background/60" />
       </div>
 
-      <div className="grid-container relative z-10">
-        {/* Top bar */}
-        <div className="col-span-12 flex justify-between items-center border-b border-border pb-4 mb-8 md:mb-16">
-          <p className="text-technical">Foundra Robotics</p>
-          <p className="text-technical">[ STATUS: ACTIVE ]</p>
+      {/* Top Navigation Bar */}
+      <div className="w-full pt-8 md:pt-12 z-10 relative">
+        <div className="grid-container">
+          <div className="col-span-12 flex justify-between items-center border-b border-border pb-4">
+            <div className="flex flex-col gap-0.5">
+              <span className="text-primary font-bold text-xl leading-none tracking-wide">FOUNDRA</span>
+              <span className="font-light text-sm leading-none tracking-[0.2em] text-foreground">Robotics</span>
+            </div>
+            <p className="text-technical">[ STATUS: ACTIVE ]</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content Distributed */}
+      <div className="flex-grow flex flex-col justify-between z-10 relative">
+        {/* Main headline & Buttons - Top Aligned */}
+        <div className="grid-container pt-8 md:pt-16 xl:pt-24">
+          <motion.div
+            className="col-span-12 lg:col-span-9"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
+          >
+            <h1 className="text-display mb-12">
+              The Universal<br />
+              Robot Software<br />
+              <span className="text-primary">Platform</span>
+            </h1>
+
+            <div className="flex flex-wrap gap-4">
+              <motion.a
+                href="mailto:info@maxwell-robotics.de"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ x: 2, y: 2 }}
+                className="px-6 py-3 bg-primary text-primary-foreground font-mono uppercase tracking-widest text-sm border-2 border-primary shadow-hard-dark active:shadow-none transition-all cursor-pointer hover:bg-primary/90"
+              >
+                Contact Us
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Main headline */}
-        <motion.div
-          className="col-span-12 lg:col-span-8 mb-8 lg:mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
-        >
-          <h1 className="text-display">
-            The Universal<br />
-            Robot Software<br />
-            <span className="text-primary">Platform</span>
-          </h1>
-        </motion.div>
+        {/* Specs sidebar - Full Width Bottom Bar */}
+        <div className="w-full border-t border-border bg-background/40 backdrop-blur-sm mt-16 md:mt-0">
+          <div className="grid-container py-8 md:py-12">
+            <motion.div
+              className="col-span-12 mb-6 flex items-baseline gap-4 pb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-primary uppercase">Spacetime OS</h2>
+              <p className="text-technical text-muted-foreground font-mono">// System Architecture</p>
+            </motion.div>
 
-        {/* Specs sidebar */}
-        <motion.div
-          className="col-span-12 lg:col-span-4 border-l border-border pl-4 lg:pl-6 mb-8 lg:mb-16"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <p className="text-technical mb-6">// Technical Overview</p>
-          <p className="text-sm leading-relaxed max-w-[60ch] mb-8">
-            An embodiment-free autonomy stack for industrial applications.
-            One configuration. Full-stack robot software. Zero integration effort.
-          </p>
-          <ul className="space-y-2 font-mono text-sm tabular-nums">
-            <li className="flex justify-between border-b border-border pb-2">
-              <span className="text-muted-foreground">Platform</span>
-              <span>Spacetime OS</span>
-            </li>
-            <li className="flex justify-between border-b border-border pb-2">
-              <span className="text-muted-foreground">Runtime</span>
-              <span>Atom</span>
-            </li>
-            <li className="flex justify-between border-b border-border pb-2">
-              <span className="text-muted-foreground">Autonomy</span>
-              <span>Vector</span>
-            </li>
-            <li className="flex justify-between">
-              <span className="text-muted-foreground">Fleet Mgmt</span>
-              <span>Orbit</span>
-            </li>
-          </ul>
-        </motion.div>
+            <motion.div
+              className="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="flex flex-col border-l border-primary/30 pl-4">
+                <span className="text-primary font-mono text-xs mb-1">01</span>
+                <span className="font-bold text-lg lg:text-xl xl:text-2xl mb-2">Catalyst</span>
+                <span className="text-sm lg:text-base text-muted-foreground">Package Manager</span>
+              </div>
 
-        {/* CTA buttons */}
-        <div className="col-span-12 flex flex-wrap gap-4 mb-8">
-          <motion.a
-            href="#contact"
-            whileTap={{ x: 2, y: 2 }}
-            className="px-6 py-3 bg-primary text-primary-foreground font-mono uppercase tracking-widest text-sm border-2 border-primary shadow-hard-dark active:shadow-none transition-all cursor-pointer"
-          >
-            Initialize Contact
-          </motion.a>
-          <motion.a
-            href="#platform"
-            whileTap={{ x: 2, y: 2 }}
-            className="px-6 py-3 bg-secondary text-foreground font-mono uppercase tracking-widest text-sm border-2 border-border shadow-hard-dark active:shadow-none transition-all cursor-pointer"
-          >
-            View Specifications
-          </motion.a>
+              <div className="flex flex-col border-l border-primary/30 pl-4">
+                <span className="text-primary font-mono text-xs mb-1">02</span>
+                <span className="font-bold text-lg lg:text-xl xl:text-2xl mb-2">Atom</span>
+                <span className="text-sm lg:text-base text-muted-foreground">Hardware Runtime</span>
+              </div>
+
+              <div className="flex flex-col border-l border-primary/30 pl-4">
+                <span className="text-primary font-mono text-xs mb-1">03</span>
+                <span className="font-bold text-lg lg:text-xl xl:text-2xl mb-2">Vector</span>
+                <span className="text-sm lg:text-base text-muted-foreground">Autonomy Stack</span>
+              </div>
+
+              <div className="flex flex-col border-l border-primary/30 pl-4">
+                <span className="text-primary font-mono text-xs mb-1">04</span>
+                <span className="font-bold text-lg lg:text-xl xl:text-2xl mb-2">Orbit</span>
+                <span className="text-sm lg:text-base text-muted-foreground">Fleet Management</span>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

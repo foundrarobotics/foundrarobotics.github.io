@@ -9,13 +9,14 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1600px",
+        "3xl": "1920px",
       },
     },
     extend: {
       fontFamily: {
         mono: ['"Geist Mono"', '"SF Mono"', '"Fira Code"', 'monospace'],
-        sans: ['"Geist Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
